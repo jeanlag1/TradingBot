@@ -15,7 +15,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from tradingbot import backtest, data, metrics, paper
 from tradingbot.strategies import buy_and_hold, ensemble_momentum
 
-OUT = Path(__file__).resolve().parent.parent / "dashboard.html"
+# Served by Vercel as the site root (only public/ is exposed, so repo source
+# stays private). Also viewable locally by opening the file directly.
+OUT = Path(__file__).resolve().parent.parent / "public" / "index.html"
 
 # Validated palette slots (see references/palette.md).
 SERIES = {"strat": "var(--series-1)", "hold": "var(--series-2)"}
@@ -150,6 +152,7 @@ def build():
             .replace("__LATEST__", last["date"])
             .replace("__NSTEPS__", str(len(st["history"])))
             .replace("__EQJSON__", equity_json))
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html)
     print(f"Wrote {OUT}")
 
