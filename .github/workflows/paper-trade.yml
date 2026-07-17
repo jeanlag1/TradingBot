@@ -1,0 +1,39 @@
+name: paper-trade
+
+# Runs the daily paper-trading step in GitHub's cloud, then commits the updated
+# book back to the repo. Daily candles close at 00:00 UTC; we step at 00:15 UTC
+# so the new bar exists. --step is idempotent, so a re-run for the same bar is a
+# no-op (and commits nothing).
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch: {}   # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  step:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Daily paper step
+        run: python scripts/paper_trade.py --step --band 0.05
+      - name: Refresh dashboard
+        run: python scripts/dashboard.py
+      - name: Commit updated book
+        run: |
+          git config user.name "paper-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/paper_state.json dashboard.html
+          if git diff --staged --quiet; then
+            echo "No change — already stepped for this bar."
+          else
+            git commit -m "paper step $(date -u +%Y-%m-%d)"
+            git push
+          fi
