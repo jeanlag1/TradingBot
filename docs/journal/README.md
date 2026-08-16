@@ -8,6 +8,7 @@ made, what got built, findings, honest caveats, and what's next.
 
 | Date | Milestone |
 |------|-----------|
+| [2026-08-16](2026-08-16-graduation-and-rotation.md) | Graduation criteria + asset-selection reality check |
 | [2026-08-16](2026-08-16-strategy-zoo.md) | Strategy zoo: 10 parallel paper models |
 | [2026-07-17](2026-07-17-paper-trading-and-automation.md) | Paper-trading loop, dashboard, cloud automation |
 | [2026-07-07](2026-07-07-foundations.md) | Brainstorm → engine → robustness → validated strategy |

@@ -59,6 +59,20 @@ def _equity(book: dict, prices: dict) -> float:
     return book["cash"] + sum(book["units"][a] * prices[a] for a in book["assets"])
 
 
+def _rotation_reason(spec, mom, weight, action, traded, held_usd):
+    """Reason for a cross-sectional rotation leg (signal = trailing momentum)."""
+    m = f"momentum {mom:+.0%}"
+    if action == "buy":
+        return f"{m} → top {spec.top_k} pick, bought ${abs(traded):,.0f}"
+    if action == "sell":
+        return f"{m} → dropped out of top {spec.top_k}, sold ${abs(traded):,.0f}"
+    if abs(held_usd) >= 1:
+        return f"{m} → held (still a top-{spec.top_k} trend)"
+    if mom > 0:
+        return f"{m} but not top {spec.top_k} → not held"
+    return f"{m} (no uptrend) → not held"
+
+
 def leg_reason(signal: float, action: str, traded: float, held_usd: float) -> str:
     """Plain-English 'why' for one asset's decision on one day."""
     sig = f"{signal:+.0%}"
@@ -87,12 +101,25 @@ def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
     equity = _equity(book, prices)
     band = spec.rebalance_band
 
+    # Rotation models decide weights across all candidates at once; capture the
+    # latest row and the momentum used, so per-asset legs stay meaningful.
+    cs_row, cs_mom = None, {}
+    if spec.cross_sectional:
+        frame = models.cross_sectional_weights(spec, dfs_asof)
+        cs_row = frame.iloc[-1]
+        for a in assets:
+            cs_mom[a] = float(dfs_asof[a]["close"].pct_change(spec.cs_lookback).iloc[-1])
+
     n_trades = 0
     weights = {}
     legs = []
     for a in assets:
-        raw = float(models.weight_series(spec, dfs_asof[a]).iloc[-1])  # exposure
-        weights[a] = raw * alloc
+        if cs_row is not None:
+            weights[a] = float(cs_row[a])                # already allocated (0 or 1/k)
+            raw = cs_mom[a]                              # "signal" = trailing momentum
+        else:
+            raw = float(models.weight_series(spec, dfs_asof[a]).iloc[-1])  # exposure
+            weights[a] = raw * alloc
         target_notional = weights[a] * equity          # may be negative (short)
         current_notional = book["units"][a] * prices[a]
         delta = target_notional - current_notional
@@ -111,10 +138,14 @@ def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
             traded = delta
 
         held_usd = book["units"][a] * prices[a]
+        if cs_row is not None:
+            reason = _rotation_reason(spec, raw, weights[a], action, traded, held_usd)
+        else:
+            reason = leg_reason(raw, action, traded, held_usd)
         legs.append({
             "asset": a, "signal": raw, "target_w": weights[a], "action": action,
             "traded_usd": traded, "price": prices[a], "held_usd": held_usd,
-            "reason": leg_reason(raw, action, traded, held_usd),
+            "reason": reason,
         })
 
     # Daily funding carry on any short exposure (honest simulation of perps).

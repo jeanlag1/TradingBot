@@ -162,13 +162,21 @@ def run_spec(
         idx = di if idx is None else idx.intersection(di)
     idx = idx.sort_values()
 
+    # Rotation models produce a full cross-sectional weight frame at once;
+    # single-asset models build each leg independently via weight_series.
+    cs_frame = models.cross_sectional_weights(spec, data) if spec.cross_sectional else None
+
     contributions, positions = [], {}
     for sym in symbols:
         df = data[sym].reindex(idx)
         asset_ret = df["close"].pct_change().fillna(0.0)
 
-        weight = models.weight_series(spec, df)
-        weight = risk.apply_rebalance_band(weight, spec.rebalance_band) * alloc
+        if cs_frame is not None:
+            weight = risk.apply_rebalance_band(cs_frame[sym].reindex(idx).fillna(0.0),
+                                               spec.rebalance_band)
+        else:
+            weight = models.weight_series(spec, df)
+            weight = risk.apply_rebalance_band(weight, spec.rebalance_band) * alloc
 
         position = weight.shift(1).fillna(0.0)   # no lookahead
         turnover = position.diff().abs().fillna(position.abs())

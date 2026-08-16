@@ -36,7 +36,7 @@ ALL = ("BTC-USD", "ETH-USD", "SOL-USD")
 @dataclass(frozen=True)
 class ModelSpec:
     name: str
-    signal: Callable[[pd.DataFrame], pd.Series]
+    signal: Callable[[pd.DataFrame], pd.Series] | None
     rationale: str
     allow_short: bool = False
     max_leverage: float = 1.0          # cap on gross exposure per asset leg
@@ -44,9 +44,16 @@ class ModelSpec:
     assets: Tuple[str, ...] = ALL
     rebalance_band: float = 0.05
     short_funding_daily: float = 0.0003  # ~11%/yr carry charged on short exposure
+    # Cross-sectional rotation: hold the top_k assets by trailing momentum from
+    # the (larger) candidate pool in `assets`, rotating as leadership changes.
+    cross_sectional: bool = False
+    top_k: int = 3
+    cs_lookback: int = 90
 
     @property
     def family(self) -> str:
+        if self.cross_sectional:
+            return "rotation"
         if self.allow_short:
             return "long/short"
         if len(self.assets) == 1:
@@ -54,6 +61,31 @@ class ModelSpec:
         if self.signal is buy_and_hold:
             return "benchmark"
         return "long/flat"
+
+
+def cross_sectional_weights(spec: ModelSpec, data_dict: dict) -> pd.DataFrame:
+    """Per-asset weight frame for a rotation model: each day, hold the top_k
+    candidates by trailing return *that also have positive momentum* (long/flat),
+    equal-weight. Rows sum to <= 1 (cash fills the rest when fewer than top_k
+    qualify). This is *selection*, not leverage — it never exceeds 100% invested.
+    """
+    idx = None
+    for a in spec.assets:
+        di = data_dict[a].index
+        idx = di if idx is None else idx.intersection(di)
+    idx = idx.sort_values()
+
+    closes = pd.DataFrame({a: data_dict[a]["close"].reindex(idx) for a in spec.assets})
+    mom = closes.pct_change(spec.cs_lookback)
+
+    w = pd.DataFrame(0.0, index=idx, columns=list(spec.assets))
+    for t in idx:
+        row = mom.loc[t].dropna()
+        row = row[row > 0]                                   # long/flat filter
+        top = row.sort_values(ascending=False).head(spec.top_k)
+        if len(top):
+            w.loc[t, top.index] = 1.0 / spec.top_k
+    return w
 
 
 def weight_series(spec: ModelSpec, df: pd.DataFrame) -> pd.Series:
@@ -117,6 +149,14 @@ ROSTER = [
               "Steadier: slow lookbacks trade rarely and ride only durable trends. "
               "Fewer fees, less noise, later exits.",
               vol_target=0.30),
+    ModelSpec("cs_momentum_rotator", None,
+              "SELECTION, not more risk: from 8 liquid names (BTC/ETH/SOL/XRP/DOGE/"
+              "LINK/ADA/AVAX) hold the top 3 by 90d momentum, rotating as leaders "
+              "change. Tests whether hunting the strongest liquid trends beats a "
+              "fixed basket — the disciplined version of 'find the best assets'.",
+              cross_sectional=True, top_k=3, cs_lookback=90,
+              assets=("BTC-USD", "ETH-USD", "SOL-USD", "XRP-USD",
+                      "DOGE-USD", "LINK-USD", "ADA-USD", "AVAX-USD")),
 ]
 
 BY_NAME = {m.name: m for m in ROSTER}
