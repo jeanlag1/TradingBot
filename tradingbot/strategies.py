@@ -75,3 +75,29 @@ def ensemble_momentum(df: pd.DataFrame, lookbacks=(30, 60, 90, 120)) -> pd.Serie
         sig[trailing_return.isna()] = 0.0
         signals.append(sig)
     return sum(signals) / len(signals)
+
+
+def ensemble_of(lookbacks):
+    """Build a long/flat ensemble-momentum signal over custom lookbacks."""
+    def _fn(df: pd.DataFrame) -> pd.Series:
+        return ensemble_momentum(df, lookbacks=lookbacks)
+    _fn.__name__ = f"ensemble_{'_'.join(map(str, lookbacks))}"
+    return _fn
+
+
+@strategy("signed_ensemble")
+def signed_ensemble(df: pd.DataFrame, lookbacks=(30, 60, 90, 120)) -> pd.Series:
+    """Long/**short** ensemble momentum: average of per-horizon sign votes in
+    [-1, 1]. +1 = every horizon says uptrend (full long), -1 = every horizon
+    says downtrend (full short), 0 = split/flat. This is the signal that lets a
+    model *profit* in downtrends instead of only sidestepping them — the whole
+    reason to test shorting. (Simulated; real perps add funding + liquidation.)
+    """
+    signals = []
+    for lb in lookbacks:
+        tr = df["close"].pct_change(lb)
+        sig = pd.Series(0.0, index=df.index)
+        sig[tr > 0] = 1.0
+        sig[tr < 0] = -1.0
+        signals.append(sig)
+    return sum(signals) / len(signals)

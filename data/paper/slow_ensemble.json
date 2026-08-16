@@ -1,0 +1,578 @@
+{
+  "name": "slow_ensemble",
+  "family": "long/flat",
+  "rationale": "Steadier: slow lookbacks trade rarely and ride only durable trends. Fewer fees, less noise, later exits.",
+  "created": "2026-08-16T21:25:10.645878+00:00",
+  "assets": [
+    "BTC-USD",
+    "ETH-USD",
+    "SOL-USD"
+  ],
+  "start_equity": 2500.0,
+  "cash": 2049.6102791821913,
+  "units": {
+    "BTC-USD": 0.0,
+    "ETH-USD": 0.10756655769311131,
+    "SOL-USD": 3.251241484327158
+  },
+  "history": [
+    {
+      "date": "2026-07-17",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63894.0,
+        "ETH-USD": 1840.94,
+        "SOL-USD": 74.98
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-18",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64796.36,
+        "ETH-USD": 1861.54,
+        "SOL-USD": 75.46
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-19",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64681.78,
+        "ETH-USD": 1870.89,
+        "SOL-USD": 76.33
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-20",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 65213.05,
+        "ETH-USD": 1903.52,
+        "SOL-USD": 77.7
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-21",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 66516.18,
+        "ETH-USD": 1929.0,
+        "SOL-USD": 78.09
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-22",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 66086.61,
+        "ETH-USD": 1933.54,
+        "SOL-USD": 77.95
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-23",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 65051.23,
+        "ETH-USD": 1876.91,
+        "SOL-USD": 75.83
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-24",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64083.32,
+        "ETH-USD": 1859.77,
+        "SOL-USD": 73.9
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-25",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64295.61,
+        "ETH-USD": 1873.05,
+        "SOL-USD": 74.46
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-26",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 65341.07,
+        "ETH-USD": 1952.93,
+        "SOL-USD": 76.69
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-27",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63694.43,
+        "ETH-USD": 1890.67,
+        "SOL-USD": 74.13
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-28",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63847.12,
+        "ETH-USD": 1919.9,
+        "SOL-USD": 73.73
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-29",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63896.14,
+        "ETH-USD": 1908.48,
+        "SOL-USD": 73.6
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-30",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64721.9,
+        "ETH-USD": 1916.82,
+        "SOL-USD": 74.44
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 62825.9,
+        "ETH-USD": 1860.66,
+        "SOL-USD": 72.79
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-01",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 62764.2,
+        "ETH-USD": 1843.18,
+        "SOL-USD": 71.88
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-02",
+      "equity": 2497.129068461273,
+      "cash": 2055.447293272533,
+      "invested": 441.6817751887404,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.08103419057252848,
+        "SOL-USD": 0.0956385195029677
+      },
+      "prices": {
+        "BTC-USD": 63499.49,
+        "ETH-USD": 1883.35,
+        "SOL-USD": 73.54
+      },
+      "trades": 2,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-03",
+      "equity": 2494.341882379345,
+      "cash": 2055.447293272533,
+      "invested": 438.89458910681213,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.08072186950703798,
+        "SOL-USD": 0.09565490270979922
+      },
+      "prices": {
+        "BTC-USD": 63466.51,
+        "ETH-USD": 1858.95,
+        "SOL-USD": 73.49
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-04",
+      "equity": 2494.237375788558,
+      "cash": 1776.3068119547831,
+      "invested": 717.9305638337746,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08069137103897168,
+        "SOL-USD": 0.09547199565611542
+      },
+      "prices": {
+        "BTC-USD": 64050.51,
+        "ETH-USD": 1868.39,
+        "SOL-USD": 73.7
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-05",
+      "equity": 2501.6919537250396,
+      "cash": 1776.3068119547831,
+      "invested": 725.3851417702567,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.07975858992712392,
+        "SOL-USD": 0.09553512745194095
+      },
+      "prices": {
+        "BTC-USD": 64603.03,
+        "ETH-USD": 1907.29,
+        "SOL-USD": 73.97
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-06",
+      "equity": 2495.357734935961,
+      "cash": 1776.3068119547831,
+      "invested": 719.0509229811782,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08065225422651325,
+        "SOL-USD": 0.09534169455227395
+      },
+      "prices": {
+        "BTC-USD": 64267.3,
+        "ETH-USD": 1902.42,
+        "SOL-USD": 72.63
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-07",
+      "equity": 2502.4664188917177,
+      "cash": 1776.3068119547831,
+      "invested": 726.1596069369346,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08172183754338293,
+        "SOL-USD": 0.09924069458323655
+      },
+      "prices": {
+        "BTC-USD": 64891.61,
+        "ETH-USD": 1913.15,
+        "SOL-USD": 73.63
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-08",
+      "equity": 2510.3579223585557,
+      "cash": 1776.3068119547831,
+      "invested": 734.0511104037723,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08172205820360058,
+        "SOL-USD": 0.09384247758455314
+      },
+      "prices": {
+        "BTC-USD": 64908.72,
+        "ETH-USD": 1915.4,
+        "SOL-USD": 75.96
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-09",
+      "equity": 2510.2320587152713,
+      "cash": 1776.3068119547831,
+      "invested": 733.9252467604881,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08394378569239985,
+        "SOL-USD": 0.09378246391421675
+      },
+      "prices": {
+        "BTC-USD": 64848.69,
+        "ETH-USD": 1909.09,
+        "SOL-USD": 76.21
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-10",
+      "equity": 2501.1829439815674,
+      "cash": 1776.3068119547831,
+      "invested": 724.876132026784,
+      "weights": {
+        "BTC-USD": 0.1111111111111111,
+        "ETH-USD": 0.08256063543520148,
+        "SOL-USD": 0.09504426840505938
+      },
+      "prices": {
+        "BTC-USD": 63911.88,
+        "ETH-USD": 1871.44,
+        "SOL-USD": 75.92
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-11",
+      "equity": 2499.7224815021955,
+      "cash": 2049.6102791821913,
+      "invested": 450.1122023200043,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.08277372548190759,
+        "SOL-USD": 0.09498127837148336
+      },
+      "prices": {
+        "BTC-USD": 63531.75,
+        "ETH-USD": 1880.72,
+        "SOL-USD": 76.22
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-12",
+      "equity": 2497.2399787969603,
+      "cash": 2049.6102791821913,
+      "invested": 447.6296996147689,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.08391321904407581,
+        "SOL-USD": 0.09796498992562214
+      },
+      "prices": {
+        "BTC-USD": 63411.72,
+        "ETH-USD": 1877.59,
+        "SOL-USD": 75.56
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-13",
+      "equity": 2500.1084029967788,
+      "cash": 2049.6102791821913,
+      "invested": 450.4981238145872,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.10248703692569636,
+        "SOL-USD": 0.10658955752812735
+      },
+      "prices": {
+        "BTC-USD": 63425.35,
+        "ETH-USD": 1884.61,
+        "SOL-USD": 76.21
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-14",
+      "equity": 2496.7955309482595,
+      "cash": 2049.6102791821913,
+      "invested": 447.1852517660683,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.10368786219998338,
+        "SOL-USD": 0.1060833892817404
+      },
+      "prices": {
+        "BTC-USD": 62975.19,
+        "ETH-USD": 1880.41,
+        "SOL-USD": 75.33
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-15",
+      "equity": 2496.6899791496207,
+      "cash": 2049.6102791821913,
+      "invested": 447.0796999674293,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.10899296692127675,
+        "SOL-USD": 0.11071299483639366
+      },
+      "prices": {
+        "BTC-USD": 63018.75,
+        "ETH-USD": 1880.94,
+        "SOL-USD": 75.28
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-16",
+      "equity": 2496.0443818380336,
+      "cash": 2049.6102791821913,
+      "invested": 446.4341026558425,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.11017200748571698,
+        "SOL-USD": 0.11074908679268287
+      },
+      "prices": {
+        "BTC-USD": 62999.8,
+        "ETH-USD": 1881.89,
+        "SOL-USD": 75.05
+      },
+      "trades": 0,
+      "funding": 0.0
+    }
+  ]
+}

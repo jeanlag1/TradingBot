@@ -1,4 +1,7 @@
 {
+  "name": "ensemble_flat",
+  "family": "long/flat",
+  "rationale": "CHAMPION (current live book, running since 2026-07-17). Ensemble momentum over 30/60/90/120d, long/flat, no vol overlay. The validated baseline every challenger must beat.",
   "created": "2026-07-17T22:31:09.347009+00:00",
   "assets": [
     "BTC-USD",

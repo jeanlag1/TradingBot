@@ -13,6 +13,8 @@ from typing import Callable, Dict, Optional
 
 import pandas as pd
 
+from . import risk
+
 # Coinbase Advanced Trade taker fee at the entry volume tier, per side.
 # Deliberately conservative — better to be pessimistic in a backtest.
 DEFAULT_FEE = 0.006
@@ -133,4 +135,57 @@ def run_portfolio(
         gross_exposure=gross_exposure,
         per_asset_position=per_asset,
         trades=trades,
+    )
+
+
+def run_spec(
+    spec,
+    data: Dict[str, pd.DataFrame],
+    fee: float = DEFAULT_FEE,
+    slippage: float = DEFAULT_SLIPPAGE,
+) -> PortfolioResult:
+    """Backtest a :class:`~tradingbot.models.ModelSpec` — the general path that
+    supports long/short, leverage, vol targeting, and a subset asset list.
+
+    Uses ``models.weight_series`` (the same function the live paper loop calls)
+    so backtest and paper stay identical. Short exposure is charged a daily
+    funding carry to keep simulated shorting honest.
+    """
+    from . import models  # local import avoids a circular dependency
+
+    symbols = list(spec.assets)
+    alloc = 1.0 / len(symbols)
+
+    idx = None
+    for sym in symbols:
+        di = data[sym].index
+        idx = di if idx is None else idx.intersection(di)
+    idx = idx.sort_values()
+
+    contributions, positions = [], {}
+    for sym in symbols:
+        df = data[sym].reindex(idx)
+        asset_ret = df["close"].pct_change().fillna(0.0)
+
+        weight = models.weight_series(spec, df)
+        weight = risk.apply_rebalance_band(weight, spec.rebalance_band) * alloc
+
+        position = weight.shift(1).fillna(0.0)   # no lookahead
+        turnover = position.diff().abs().fillna(position.abs())
+        funding = position.clip(upper=0.0).abs() * spec.short_funding_daily
+
+        contributions.append(position * asset_ret - turnover * (fee + slippage) - funding)
+        positions[sym] = position
+
+    net_returns = sum(contributions)
+    per_asset = pd.DataFrame(positions)
+    total_turnover = sum(per_asset[s].diff().abs().fillna(per_asset[s].abs()) for s in symbols)
+    equity = (1.0 + net_returns).cumprod()
+
+    return PortfolioResult(
+        equity=equity,
+        net_returns=net_returns,
+        gross_exposure=per_asset.abs().sum(axis=1),
+        per_asset_position=per_asset,
+        trades=int((total_turnover > 1e-9).sum()),
     )

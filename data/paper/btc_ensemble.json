@@ -1,0 +1,450 @@
+{
+  "name": "btc_ensemble",
+  "family": "concentrated",
+  "rationale": "Conservative concentration: ensemble momentum on BTC only, the calmest major. Low-variance single-asset trend.",
+  "created": "2026-08-16T21:25:10.592094+00:00",
+  "assets": [
+    "BTC-USD"
+  ],
+  "start_equity": 2500.0,
+  "cash": 2459.2994483897373,
+  "units": {
+    "BTC-USD": 0.0
+  },
+  "history": [
+    {
+      "date": "2026-07-17",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63894.0
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-18",
+      "equity": 2496.2893093311545,
+      "cash": 1925.4138218164735,
+      "invested": 570.8754875146811,
+      "weights": {
+        "BTC-USD": 0.22835019500587245
+      },
+      "prices": {
+        "BTC-USD": 64796.36
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-19",
+      "equity": 2495.2798249502507,
+      "cash": 1925.4138218164735,
+      "invested": 569.8660031337771,
+      "weights": {
+        "BTC-USD": 0.22922436862151052
+      },
+      "prices": {
+        "BTC-USD": 64681.78
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-20",
+      "equity": 2499.9604739905967,
+      "cash": 1925.4138218164735,
+      "invested": 574.5466521741233,
+      "weights": {
+        "BTC-USD": 0.2301224774516661
+      },
+      "prices": {
+        "BTC-USD": 65213.05
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-21",
+      "equity": 2511.4414425827367,
+      "cash": 1925.4138218164735,
+      "invested": 586.0276207662633,
+      "weights": {
+        "BTC-USD": 0.22910273337115944
+      },
+      "prices": {
+        "BTC-USD": 66516.18
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-22",
+      "equity": 2507.6568012360367,
+      "cash": 1925.4138218164735,
+      "invested": 582.2429794195631,
+      "weights": {
+        "BTC-USD": 0.2295300429698122
+      },
+      "prices": {
+        "BTC-USD": 66086.61
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-23",
+      "equity": 2498.534790952389,
+      "cash": 1925.4138218164735,
+      "invested": 573.1209691359152,
+      "weights": {
+        "BTC-USD": 0.23205985363704526
+      },
+      "prices": {
+        "BTC-USD": 65051.23
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-24",
+      "equity": 2490.0072117315754,
+      "cash": 1925.4138218164735,
+      "invested": 564.593389915102,
+      "weights": {
+        "BTC-USD": 0.2396792770544618
+      },
+      "prices": {
+        "BTC-USD": 64083.32
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-25",
+      "equity": 2491.87755070192,
+      "cash": 1925.4138218164735,
+      "invested": 566.4637288854467,
+      "weights": {
+        "BTC-USD": 0.24838066469292458
+      },
+      "prices": {
+        "BTC-USD": 64295.61
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-26",
+      "equity": 2501.08836882777,
+      "cash": 1925.4138218164735,
+      "invested": 575.6745470112967,
+      "weights": {
+        "BTC-USD": 0.24540498511364722
+      },
+      "prices": {
+        "BTC-USD": 65341.07
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-27",
+      "equity": 2486.5809734623335,
+      "cash": 1925.4138218164735,
+      "invested": 561.1671516458599,
+      "weights": {
+        "BTC-USD": 0.23376559503448055
+      },
+      "prices": {
+        "BTC-USD": 63694.43
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-28",
+      "equity": 2487.926218445055,
+      "cash": 1925.4138218164735,
+      "invested": 562.5123966285814,
+      "weights": {
+        "BTC-USD": 0.23521457938164295
+      },
+      "prices": {
+        "BTC-USD": 63847.12
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-29",
+      "equity": 2488.3580994395734,
+      "cash": 1925.4138218164735,
+      "invested": 562.9442776230998,
+      "weights": {
+        "BTC-USD": 0.23643685730430675
+      },
+      "prices": {
+        "BTC-USD": 63896.14
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-30",
+      "equity": 2495.633294258698,
+      "cash": 1925.4138218164735,
+      "invested": 570.2194724422242,
+      "weights": {
+        "BTC-USD": 0.24924891823702203
+      },
+      "prices": {
+        "BTC-USD": 64721.9
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 2478.9289620349764,
+      "cash": 1925.4138218164735,
+      "invested": 553.5151402185031,
+      "weights": {
+        "BTC-USD": 0.24049820269644043
+      },
+      "prices": {
+        "BTC-USD": 62825.9
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-01",
+      "equity": 2478.3853664135613,
+      "cash": 1925.4138218164735,
+      "invested": 552.9715445970876,
+      "weights": {
+        "BTC-USD": 0.25
+      },
+      "prices": {
+        "BTC-USD": 62764.2
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-02",
+      "equity": 2484.8634932283185,
+      "cash": 1925.4138218164735,
+      "invested": 559.449671411845,
+      "weights": {
+        "BTC-USD": 0.25
+      },
+      "prices": {
+        "BTC-USD": 63499.49
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-03",
+      "equity": 2484.5729294747644,
+      "cash": 1925.4138218164735,
+      "invested": 559.1591076582911,
+      "weights": {
+        "BTC-USD": 0.25
+      },
+      "prices": {
+        "BTC-USD": 63466.51
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-04",
+      "equity": 2485.294539861142,
+      "cash": 1240.4354669964775,
+      "invested": 1244.859072864664,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64050.51
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-05",
+      "equity": 2496.033088780411,
+      "cash": 1240.4354669964775,
+      "invested": 1255.5976217839338,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64603.03
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-06",
+      "equity": 2489.507980135174,
+      "cash": 1240.4354669964775,
+      "invested": 1249.0725131386966,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64267.3
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-07",
+      "equity": 2501.6418096359876,
+      "cash": 1240.4354669964775,
+      "invested": 1261.20634263951,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64891.61
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-08",
+      "equity": 2501.9743524797013,
+      "cash": 1240.4354669964775,
+      "invested": 1261.5388854832238,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64908.72
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-09",
+      "equity": 2500.807634367011,
+      "cash": 1240.4354669964775,
+      "invested": 1260.3721673705334,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 64848.69
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-10",
+      "equity": 2482.6001848392807,
+      "cash": 1240.4354669964775,
+      "invested": 1242.1647178428034,
+      "weights": {
+        "BTC-USD": 0.5
+      },
+      "prices": {
+        "BTC-USD": 63911.88
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-11",
+      "equity": 2467.1860879104024,
+      "cash": 2467.1860879104024,
+      "invested": -2.2042003638977903e-13,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63531.75
+      },
+      "trades": 1,
+      "funding": 6.61260109169337e-17
+    },
+    {
+      "date": "2026-08-12",
+      "equity": 2463.1769105175476,
+      "cash": 1846.380388539947,
+      "invested": 616.7965219776006,
+      "weights": {
+        "BTC-USD": 0.25
+      },
+      "prices": {
+        "BTC-USD": 63411.72
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-13",
+      "equity": 2459.2994483897373,
+      "cash": 2459.2994483897373,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63425.35
+      },
+      "trades": 1,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-14",
+      "equity": 2459.2994483897373,
+      "cash": 2459.2994483897373,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 62975.19
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-15",
+      "equity": 2459.2994483897373,
+      "cash": 2459.2994483897373,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 63018.75
+      },
+      "trades": 0,
+      "funding": 0.0
+    },
+    {
+      "date": "2026-08-16",
+      "equity": 2459.2994483897373,
+      "cash": 2459.2994483897373,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 62999.8
+      },
+      "trades": 0,
+      "funding": 0.0
+    }
+  ]
+}

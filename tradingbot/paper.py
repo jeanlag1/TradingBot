@@ -1,18 +1,12 @@
-"""Paper-trading loop: run the real strategy against a persistent simulated book.
+"""Multi-model paper-trading: run the whole roster in parallel on simulated books.
 
-This is the bridge between backtest and live money. It uses the *same*
-``ensemble_momentum`` signal the backtest uses, but instead of a vectorized
-return series it maintains an actual portfolio — cash + per-asset units — that
-persists to disk between runs. Each daily step:
-
-  1. pull the latest candles,
-  2. compute target weights from the shared signal,
-  3. rebalance toward them (subject to a no-churn band), paying modeled costs,
-  4. append a history row and save.
-
-If ``backfill`` replays history and does NOT match ``backtest.run_portfolio``,
-the live loop has a bug — that parity check is the whole point of this stage.
-No real money until this has tracked the backtest live for weeks.
+Each model in ``models.ROSTER`` gets its own persistent book (cash + per-asset
+units) under ``data/paper/<name>.json``. One daily ``step_all`` advances every
+book using the *same* ``models.weight_series`` the backtester uses, so every
+challenger is validated exactly as it would trade. Shorting is simulated
+(negative units, inverse P&L, a daily funding carry) — no perps API, no real
+money. Nothing here risks a dollar; it exists to generate parallel feedback so we
+can compare strategies live without betting on any of them.
 """
 
 from __future__ import annotations
@@ -23,124 +17,144 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from . import backtest, data
-from .strategies import ensemble_momentum
+from . import backtest, data, models
 
-STATE_PATH = os.path.join(data.DATA_DIR, "paper_state.json")
-DEFAULT_ASSETS = ["BTC-USD", "ETH-USD", "SOL-USD"]
+BOOK_DIR = os.path.join(data.DATA_DIR, "paper")
+START_EQUITY = 2500.0
+
+
+def _book_path(name: str) -> str:
+    return os.path.join(BOOK_DIR, f"{name}.json")
 
 
 # ---------------------------------------------------------------- state I/O ---
-def init_state(equity: float = 2500.0, assets=DEFAULT_ASSETS, path: str = STATE_PATH) -> dict:
-    state = {
+def init_book(spec, equity: float = START_EQUITY) -> dict:
+    book = {
+        "name": spec.name,
+        "family": spec.family,
+        "rationale": spec.rationale,
         "created": datetime.now(timezone.utc).isoformat(),
-        "assets": list(assets),
+        "assets": list(spec.assets),
         "start_equity": float(equity),
         "cash": float(equity),
-        "units": {a: 0.0 for a in assets},
+        "units": {a: 0.0 for a in spec.assets},
         "history": [],
     }
-    save_state(state, path)
-    return state
+    save_book(book)
+    return book
 
 
-def load_state(path: str = STATE_PATH) -> dict:
-    with open(path) as f:
+def load_book(name: str) -> dict:
+    with open(_book_path(name)) as f:
         return json.load(f)
 
 
-def save_state(state: dict, path: str = STATE_PATH) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w") as f:
-        json.dump(state, f, indent=2)
+def save_book(book: dict) -> None:
+    os.makedirs(BOOK_DIR, exist_ok=True)
+    with open(_book_path(book["name"]), "w") as f:
+        json.dump(book, f, indent=2)
+
+
+def _equity(book: dict, prices: dict) -> float:
+    return book["cash"] + sum(book["units"][a] * prices[a] for a in book["assets"])
 
 
 # ------------------------------------------------------------ core rebalance ---
-def _equity(state: dict, prices: dict) -> float:
-    return state["cash"] + sum(state["units"][a] * prices[a] for a in state["assets"])
+def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
+    """Advance one book by one bar, in place. Handles longs and shorts."""
+    from . import risk  # noqa: F401  (kept explicit for parity with backtest path)
 
-
-def _rebalance(state, dfs_asof, prices, date, fee, slippage, band):
-    """Apply one day's rebalance in place. Returns (equity_after, n_trades)."""
-    assets = state["assets"]
+    assets = book["assets"]
     alloc = 1.0 / len(assets)
-    equity = _equity(state, prices)
+    equity = _equity(book, prices)
+    band = spec.rebalance_band
 
     n_trades = 0
     weights = {}
     for a in assets:
-        w = float(ensemble_momentum(dfs_asof[a]).iloc[-1])  # shared signal
+        w = float(models.weight_series(spec, dfs_asof[a]).iloc[-1])
         weights[a] = w * alloc
-        target_notional = weights[a] * equity
-        current_notional = state["units"][a] * prices[a]
+        target_notional = weights[a] * equity          # may be negative (short)
+        current_notional = book["units"][a] * prices[a]
         delta = target_notional - current_notional
 
-        # Skip trades smaller than the band to avoid churning on tiny drifts.
-        if abs(delta) < band * equity:
+        if abs(delta) < band * equity:                 # inside the no-churn band
             continue
 
         cost = abs(delta) * (fee + slippage)
-        state["units"][a] += delta / prices[a]
-        state["cash"] -= delta + cost
+        book["units"][a] += delta / prices[a]
+        book["cash"] -= delta + cost
         n_trades += 1
 
-    equity_after = _equity(state, prices)
-    invested = sum(state["units"][a] * prices[a] for a in assets)
-    state["history"].append({
-        "date": date,
-        "equity": equity_after,
-        "cash": state["cash"],
-        "invested": invested,
-        "weights": weights,
-        "prices": prices,
-        "trades": n_trades,
+    # Daily funding carry on any short exposure (honest simulation of perps).
+    short_notional = sum(-book["units"][a] * prices[a]
+                         for a in assets if book["units"][a] < 0)
+    funding = short_notional * spec.short_funding_daily
+    book["cash"] -= funding
+
+    equity_after = _equity(book, prices)
+    invested = sum(book["units"][a] * prices[a] for a in assets)
+    book["history"].append({
+        "date": date, "equity": equity_after, "cash": book["cash"],
+        "invested": invested, "weights": weights, "prices": prices,
+        "trades": n_trades, "funding": funding,
     })
-    return equity_after, n_trades
+    return equity_after
 
 
 # ------------------------------------------------------------------- drivers ---
-def step(fee=backtest.DEFAULT_FEE, slippage=backtest.DEFAULT_SLIPPAGE,
-         band=0.05, path=STATE_PATH) -> tuple[dict, bool]:
-    """Run one live daily step against the latest data. Idempotent per bar."""
-    state = load_state(path)
-    assets = state["assets"]
-    dfs = {a: data.load(a, refresh=True) for a in assets}
-    date = min(str(df.index[-1].date()) for df in dfs.values())
+def step_all(fee=backtest.DEFAULT_FEE, slippage=backtest.DEFAULT_SLIPPAGE) -> dict:
+    """Advance every book by one bar against the latest data. Idempotent per bar.
 
-    if state["history"] and state["history"][-1]["date"] >= date:
-        return state, False  # already stepped for this bar
-
-    prices = {a: float(dfs[a]["close"].iloc[-1]) for a in assets}
-    _rebalance(state, dfs, prices, date, fee, slippage, band)
-    save_state(state, path)
-    return state, True
-
-
-def backfill(days=250, equity=2500.0, assets=DEFAULT_ASSETS,
-             fee=backtest.DEFAULT_FEE, slippage=backtest.DEFAULT_SLIPPAGE,
-             band=0.0, path=STATE_PATH) -> dict:
-    """Replay the last ``days`` bars through the live loop to build history.
-
-    Signals at each step use full history up to that bar (correct warmup), so
-    with ``band=0`` this should reproduce the vectorized backtest closely.
+    Auto-initializes any newly-added roster model before stepping, so the zoo can
+    grow without a manual backfill (new books just start from today).
     """
-    state = init_state(equity, assets, path)
-    dfs = {a: data.load(a) for a in assets}
-    common = None
-    for df in dfs.values():
-        common = df.index if common is None else common.intersection(df.index)
-    common = common.sort_values()
+    all_syms = sorted({a for m in models.ROSTER for a in m.assets})
+    dfs = {a: data.load(a, refresh=True) for a in all_syms}
+    date = min(str(dfs[a].index[-1].date()) for a in all_syms)
 
-    for ts in common[-days:]:
-        dfs_asof = {a: dfs[a].loc[:ts] for a in assets}
-        prices = {a: float(dfs[a].loc[ts, "close"]) for a in assets}
-        _rebalance(state, dfs_asof, prices, str(ts.date()), fee, slippage, band)
-    save_state(state, path)
-    return state
+    summary = {"date": date, "stepped": [], "skipped": []}
+    for spec in models.ROSTER:
+        if not os.path.exists(_book_path(spec.name)):
+            init_book(spec)
+        book = load_book(spec.name)
+        if book["history"] and book["history"][-1]["date"] >= date:
+            summary["skipped"].append(spec.name)
+            continue
+        prices = {a: float(dfs[a]["close"].iloc[-1]) for a in spec.assets}
+        dfs_asof = {a: dfs[a] for a in spec.assets}
+        _rebalance(spec, book, dfs_asof, prices, date, fee, slippage)
+        save_book(book)
+        summary["stepped"].append(spec.name)
+    return summary
 
 
-def equity_curve(state: dict) -> pd.Series:
-    if not state["history"]:
+def backfill_all(days=250, equity=START_EQUITY,
+                 fee=backtest.DEFAULT_FEE, slippage=backtest.DEFAULT_SLIPPAGE) -> None:
+    """Replay the last ``days`` bars through every book (fresh start each)."""
+    all_syms = sorted({a for m in models.ROSTER for a in m.assets})
+    dfs = {a: data.load(a) for a in all_syms}
+
+    for spec in models.ROSTER:
+        common = None
+        for a in spec.assets:
+            common = dfs[a].index if common is None else common.intersection(dfs[a].index)
+        common = common.sort_values()
+
+        book = init_book(spec, equity)
+        for ts in common[-days:]:
+            dfs_asof = {a: dfs[a].loc[:ts] for a in spec.assets}
+            prices = {a: float(dfs[a].loc[ts, "close"]) for a in spec.assets}
+            _rebalance(spec, book, dfs_asof, prices, str(ts.date()), fee, slippage)
+        save_book(book)
+
+
+def equity_curve(book: dict) -> pd.Series:
+    if not book["history"]:
         return pd.Series(dtype=float)
-    idx = pd.to_datetime([h["date"] for h in state["history"]])
-    return pd.Series([h["equity"] for h in state["history"]], index=idx)
+    idx = pd.to_datetime([h["date"] for h in book["history"]])
+    return pd.Series([h["equity"] for h in book["history"]], index=idx)
+
+
+def load_all() -> list[dict]:
+    return [load_book(m.name) for m in models.ROSTER if os.path.exists(_book_path(m.name))]
