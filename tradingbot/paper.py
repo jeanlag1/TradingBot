@@ -59,11 +59,29 @@ def _equity(book: dict, prices: dict) -> float:
     return book["cash"] + sum(book["units"][a] * prices[a] for a in book["assets"])
 
 
+def leg_reason(signal: float, action: str, traded: float, held_usd: float) -> str:
+    """Plain-English 'why' for one asset's decision on one day."""
+    sig = f"{signal:+.0%}"
+    if action == "buy":
+        return f"signal {sig} → bought ${abs(traded):,.0f}"
+    if action == "sell":
+        verb = "closed position" if abs(held_usd) < 1 else "trimmed"
+        return f"signal {sig} → {verb} (${abs(traded):,.0f})"
+    if action == "short":
+        return f"downtrend, signal {sig} → shorted ${abs(traded):,.0f}"
+    # hold
+    if abs(held_usd) < 1:
+        if signal > 0:
+            return f"signal {sig} but move < rebalance band → stayed flat"
+        return "no uptrend (signal 0%) → in cash"
+    side = "short" if held_usd < 0 else "long"
+    return f"signal {sig} → holding {side} ${abs(held_usd):,.0f} (within band)"
+
+
 # ------------------------------------------------------------ core rebalance ---
 def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
-    """Advance one book by one bar, in place. Handles longs and shorts."""
-    from . import risk  # noqa: F401  (kept explicit for parity with backtest path)
-
+    """Advance one book by one bar, in place. Handles longs and shorts, and
+    records a per-asset decision 'leg' (signal, action, amount, reason)."""
     assets = book["assets"]
     alloc = 1.0 / len(assets)
     equity = _equity(book, prices)
@@ -71,20 +89,33 @@ def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
 
     n_trades = 0
     weights = {}
+    legs = []
     for a in assets:
-        w = float(models.weight_series(spec, dfs_asof[a]).iloc[-1])
-        weights[a] = w * alloc
+        raw = float(models.weight_series(spec, dfs_asof[a]).iloc[-1])  # exposure
+        weights[a] = raw * alloc
         target_notional = weights[a] * equity          # may be negative (short)
         current_notional = book["units"][a] * prices[a]
         delta = target_notional - current_notional
 
         if abs(delta) < band * equity:                 # inside the no-churn band
-            continue
+            action, traded = "hold", 0.0
+        else:
+            cost = abs(delta) * (fee + slippage)
+            book["units"][a] += delta / prices[a]
+            book["cash"] -= delta + cost
+            n_trades += 1
+            if delta < 0 and book["units"][a] < 0:
+                action = "short"
+            else:
+                action = "buy" if delta > 0 else "sell"
+            traded = delta
 
-        cost = abs(delta) * (fee + slippage)
-        book["units"][a] += delta / prices[a]
-        book["cash"] -= delta + cost
-        n_trades += 1
+        held_usd = book["units"][a] * prices[a]
+        legs.append({
+            "asset": a, "signal": raw, "target_w": weights[a], "action": action,
+            "traded_usd": traded, "price": prices[a], "held_usd": held_usd,
+            "reason": leg_reason(raw, action, traded, held_usd),
+        })
 
     # Daily funding carry on any short exposure (honest simulation of perps).
     short_notional = sum(-book["units"][a] * prices[a]
@@ -97,7 +128,7 @@ def _rebalance(spec, book, dfs_asof, prices, date, fee, slippage):
     book["history"].append({
         "date": date, "equity": equity_after, "cash": book["cash"],
         "invested": invested, "weights": weights, "prices": prices,
-        "trades": n_trades, "funding": funding,
+        "trades": n_trades, "funding": funding, "legs": legs,
     })
     return equity_after
 

@@ -2,7 +2,7 @@
   "name": "sol_momentum",
   "family": "concentrated",
   "rationale": "Aggression via concentration: 90d momentum on SOL only, the highest vol/return name. Concentrated bet on the hot asset.",
-  "created": "2026-08-16T21:25:10.567845+00:00",
+  "created": "2026-08-16T22:25:39.645959+00:00",
   "assets": [
     "SOL-USD"
   ],
@@ -24,7 +24,19 @@
         "SOL-USD": 74.98
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 74.98,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-18",
@@ -38,7 +50,19 @@
         "SOL-USD": 75.46
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.46,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-19",
@@ -52,7 +76,19 @@
         "SOL-USD": 76.33
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 76.33,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-20",
@@ -66,7 +102,19 @@
         "SOL-USD": 77.7
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 77.7,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-21",
@@ -80,7 +128,19 @@
         "SOL-USD": 78.09
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 78.09,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-22",
@@ -94,7 +154,19 @@
         "SOL-USD": 77.95
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 77.95,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-23",
@@ -108,7 +180,19 @@
         "SOL-USD": 75.83
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.83,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-24",
@@ -122,7 +206,19 @@
         "SOL-USD": 73.9
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.9,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-25",
@@ -136,7 +232,19 @@
         "SOL-USD": 74.46
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 74.46,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-26",
@@ -150,7 +258,19 @@
         "SOL-USD": 76.69
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 76.69,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-27",
@@ -164,7 +284,19 @@
         "SOL-USD": 74.13
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 74.13,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-28",
@@ -178,7 +310,19 @@
         "SOL-USD": 73.73
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.73,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-29",
@@ -192,7 +336,19 @@
         "SOL-USD": 73.6
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.6,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-30",
@@ -206,7 +362,19 @@
         "SOL-USD": 74.44
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 74.44,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-31",
@@ -220,7 +388,19 @@
         "SOL-USD": 72.79
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 72.79,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-01",
@@ -234,7 +414,19 @@
         "SOL-USD": 71.88
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 71.88,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-02",
@@ -248,7 +440,19 @@
         "SOL-USD": 73.54
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.54,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-03",
@@ -262,7 +466,19 @@
         "SOL-USD": 73.49
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.49,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-04",
@@ -276,7 +492,19 @@
         "SOL-USD": 73.7
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.7,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-05",
@@ -290,7 +518,19 @@
         "SOL-USD": 73.97
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.97,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-06",
@@ -304,7 +544,19 @@
         "SOL-USD": 72.63
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 72.63,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-07",
@@ -318,7 +570,19 @@
         "SOL-USD": 73.63
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 73.63,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-08",
@@ -332,7 +596,19 @@
         "SOL-USD": 75.96
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.96,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-09",
@@ -346,7 +622,19 @@
         "SOL-USD": 76.21
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 76.21,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-10",
@@ -360,7 +648,19 @@
         "SOL-USD": 75.92
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.92,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-11",
@@ -374,7 +674,19 @@
         "SOL-USD": 76.22
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 76.22,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-12",
@@ -388,7 +700,19 @@
         "SOL-USD": 75.56
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.56,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-13",
@@ -402,7 +726,19 @@
         "SOL-USD": 76.21
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 76.21,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-14",
@@ -416,7 +752,19 @@
         "SOL-USD": 75.33
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.33,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-15",
@@ -430,7 +778,19 @@
         "SOL-USD": 75.28
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.28,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-16",
@@ -444,7 +804,19 @@
         "SOL-USD": 75.05
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.05,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     }
   ]
 }

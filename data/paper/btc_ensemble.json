@@ -2,7 +2,7 @@
   "name": "btc_ensemble",
   "family": "concentrated",
   "rationale": "Conservative concentration: ensemble momentum on BTC only, the calmest major. Low-variance single-asset trend.",
-  "created": "2026-08-16T21:25:10.592094+00:00",
+  "created": "2026-08-16T22:25:39.672982+00:00",
   "assets": [
     "BTC-USD"
   ],
@@ -24,7 +24,19 @@
         "BTC-USD": 63894.0
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63894.0,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-07-18",
@@ -38,7 +50,19 @@
         "BTC-USD": 64796.36
       },
       "trades": 1,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.22835019500587245,
+          "target_w": 0.22835019500587245,
+          "action": "buy",
+          "traded_usd": 570.8754875146811,
+          "price": 64796.36,
+          "held_usd": 570.8754875146811,
+          "reason": "signal +23% \u2192 bought $571"
+        }
+      ]
     },
     {
       "date": "2026-07-19",
@@ -52,7 +76,19 @@
         "BTC-USD": 64681.78
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.22922436862151052,
+          "target_w": 0.22922436862151052,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64681.78,
+          "held_usd": 569.8660031337771,
+          "reason": "signal +23% \u2192 holding long $570 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-20",
@@ -66,7 +102,19 @@
         "BTC-USD": 65213.05
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.2301224774516661,
+          "target_w": 0.2301224774516661,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 65213.05,
+          "held_usd": 574.5466521741233,
+          "reason": "signal +23% \u2192 holding long $575 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-21",
@@ -80,7 +128,19 @@
         "BTC-USD": 66516.18
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.22910273337115944,
+          "target_w": 0.22910273337115944,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 66516.18,
+          "held_usd": 586.0276207662633,
+          "reason": "signal +23% \u2192 holding long $586 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-22",
@@ -94,7 +154,19 @@
         "BTC-USD": 66086.61
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.2295300429698122,
+          "target_w": 0.2295300429698122,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 66086.61,
+          "held_usd": 582.2429794195631,
+          "reason": "signal +23% \u2192 holding long $582 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-23",
@@ -108,7 +180,19 @@
         "BTC-USD": 65051.23
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.23205985363704526,
+          "target_w": 0.23205985363704526,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 65051.23,
+          "held_usd": 573.1209691359152,
+          "reason": "signal +23% \u2192 holding long $573 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-24",
@@ -122,7 +206,19 @@
         "BTC-USD": 64083.32
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.2396792770544618,
+          "target_w": 0.2396792770544618,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64083.32,
+          "held_usd": 564.593389915102,
+          "reason": "signal +24% \u2192 holding long $565 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-25",
@@ -136,7 +232,19 @@
         "BTC-USD": 64295.61
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.24838066469292458,
+          "target_w": 0.24838066469292458,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64295.61,
+          "held_usd": 566.4637288854467,
+          "reason": "signal +25% \u2192 holding long $566 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-26",
@@ -150,7 +258,19 @@
         "BTC-USD": 65341.07
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.24540498511364722,
+          "target_w": 0.24540498511364722,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 65341.07,
+          "held_usd": 575.6745470112967,
+          "reason": "signal +25% \u2192 holding long $576 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-27",
@@ -164,7 +284,19 @@
         "BTC-USD": 63694.43
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.23376559503448055,
+          "target_w": 0.23376559503448055,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63694.43,
+          "held_usd": 561.1671516458599,
+          "reason": "signal +23% \u2192 holding long $561 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-28",
@@ -178,7 +310,19 @@
         "BTC-USD": 63847.12
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.23521457938164295,
+          "target_w": 0.23521457938164295,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63847.12,
+          "held_usd": 562.5123966285814,
+          "reason": "signal +24% \u2192 holding long $563 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-29",
@@ -192,7 +336,19 @@
         "BTC-USD": 63896.14
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.23643685730430675,
+          "target_w": 0.23643685730430675,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63896.14,
+          "held_usd": 562.9442776230998,
+          "reason": "signal +24% \u2192 holding long $563 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-30",
@@ -206,7 +362,19 @@
         "BTC-USD": 64721.9
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.24924891823702203,
+          "target_w": 0.24924891823702203,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64721.9,
+          "held_usd": 570.2194724422242,
+          "reason": "signal +25% \u2192 holding long $570 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-07-31",
@@ -220,7 +388,19 @@
         "BTC-USD": 62825.9
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.24049820269644043,
+          "target_w": 0.24049820269644043,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 62825.9,
+          "held_usd": 553.5151402185031,
+          "reason": "signal +24% \u2192 holding long $554 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-01",
@@ -234,7 +414,19 @@
         "BTC-USD": 62764.2
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.25,
+          "target_w": 0.25,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 62764.2,
+          "held_usd": 552.9715445970876,
+          "reason": "signal +25% \u2192 holding long $553 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-02",
@@ -248,7 +440,19 @@
         "BTC-USD": 63499.49
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.25,
+          "target_w": 0.25,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63499.49,
+          "held_usd": 559.449671411845,
+          "reason": "signal +25% \u2192 holding long $559 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-03",
@@ -262,7 +466,19 @@
         "BTC-USD": 63466.51
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.25,
+          "target_w": 0.25,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63466.51,
+          "held_usd": 559.1591076582911,
+          "reason": "signal +25% \u2192 holding long $559 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-04",
@@ -276,7 +492,19 @@
         "BTC-USD": 64050.51
       },
       "trades": 1,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "buy",
+          "traded_usd": 680.5547489518092,
+          "price": 64050.51,
+          "held_usd": 1244.859072864664,
+          "reason": "signal +50% \u2192 bought $681"
+        }
+      ]
     },
     {
       "date": "2026-08-05",
@@ -290,7 +518,19 @@
         "BTC-USD": 64603.03
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64603.03,
+          "held_usd": 1255.5976217839338,
+          "reason": "signal +50% \u2192 holding long $1,256 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-06",
@@ -304,7 +544,19 @@
         "BTC-USD": 64267.3
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64267.3,
+          "held_usd": 1249.0725131386966,
+          "reason": "signal +50% \u2192 holding long $1,249 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-07",
@@ -318,7 +570,19 @@
         "BTC-USD": 64891.61
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64891.61,
+          "held_usd": 1261.20634263951,
+          "reason": "signal +50% \u2192 holding long $1,261 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-08",
@@ -332,7 +596,19 @@
         "BTC-USD": 64908.72
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64908.72,
+          "held_usd": 1261.5388854832238,
+          "reason": "signal +50% \u2192 holding long $1,262 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-09",
@@ -346,7 +622,19 @@
         "BTC-USD": 64848.69
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 64848.69,
+          "held_usd": 1260.3721673705334,
+          "reason": "signal +50% \u2192 holding long $1,260 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-10",
@@ -360,7 +648,19 @@
         "BTC-USD": 63911.88
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.5,
+          "target_w": 0.5,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63911.88,
+          "held_usd": 1242.1647178428034,
+          "reason": "signal +50% \u2192 holding long $1,242 (within band)"
+        }
+      ]
     },
     {
       "date": "2026-08-11",
@@ -374,7 +674,19 @@
         "BTC-USD": 63531.75
       },
       "trades": 1,
-      "funding": 6.61260109169337e-17
+      "funding": 6.61260109169337e-17,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "short",
+          "traded_usd": -1234.7766692641421,
+          "price": 63531.75,
+          "held_usd": -2.2042003638977903e-13,
+          "reason": "downtrend, signal +0% \u2192 shorted $1,235"
+        }
+      ]
     },
     {
       "date": "2026-08-12",
@@ -388,7 +700,19 @@
         "BTC-USD": 63411.72
       },
       "trades": 1,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.25,
+          "target_w": 0.25,
+          "action": "buy",
+          "traded_usd": 616.7965219776008,
+          "price": 63411.72,
+          "held_usd": 616.7965219776006,
+          "reason": "signal +25% \u2192 bought $617"
+        }
+      ]
     },
     {
       "date": "2026-08-13",
@@ -402,7 +726,19 @@
         "BTC-USD": 63425.35
       },
       "trades": 1,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "sell",
+          "traded_usd": -616.9290989932462,
+          "price": 63425.35,
+          "held_usd": 0.0,
+          "reason": "signal +0% \u2192 closed position ($617)"
+        }
+      ]
     },
     {
       "date": "2026-08-14",
@@ -416,7 +752,19 @@
         "BTC-USD": 62975.19
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 62975.19,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-15",
@@ -430,7 +778,19 @@
         "BTC-USD": 63018.75
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 63018.75,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     },
     {
       "date": "2026-08-16",
@@ -444,7 +804,19 @@
         "BTC-USD": 62999.8
       },
       "trades": 0,
-      "funding": 0.0
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 62999.8,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     }
   ]
 }
