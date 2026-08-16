@@ -40,6 +40,11 @@ h1{font-size:22px;margin:0 0 2px} .sub{color:var(--text-secondary);font-size:14p
 .act{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.02em}
 .act.buy{color:var(--buy)} .act.short{color:var(--sell)} .act.sell{color:var(--sell)} .act.hold{color:var(--hold)}
 .daterow td{border-top:2px solid var(--border);font-weight:600}
+.gate{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid var(--grid);font-size:13px}
+.gate:last-child{border-bottom:none} .gate .mark{font-weight:700;width:16px}
+.gate.pass .mark{color:var(--good)} .gate.fail .mark{color:var(--muted)}
+.gate .g-detail{color:var(--muted);font-size:12px;margin-left:auto;font-variant-numeric:tabular-nums}
+.gate.manual .mark{color:var(--series-3)}
 .note{background:var(--champ-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13px;
   color:var(--text-secondary);margin-bottom:22px}
 .foot{color:var(--muted);font-size:12px;margin-top:24px}

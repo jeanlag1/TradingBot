@@ -13,7 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from tradingbot import metrics, models, paper
+from tradingbot import graduation, metrics, models, paper
 
 PUB = Path(__file__).resolve().parent.parent / "public"
 VALIDATION_TARGET_DAYS = 60
@@ -63,6 +63,11 @@ h1{font-size:22px;margin:0 0 2px} .sub{color:var(--text-secondary);font-size:14p
 .act{font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.02em}
 .act.buy{color:var(--buy)} .act.short{color:var(--sell)} .act.sell{color:var(--sell)} .act.hold{color:var(--hold)}
 .daterow td{border-top:2px solid var(--border);font-weight:600}
+.gate{display:flex;align-items:baseline;gap:8px;padding:7px 0;border-bottom:1px solid var(--grid);font-size:13px}
+.gate:last-child{border-bottom:none} .gate .mark{font-weight:700;width:16px}
+.gate.pass .mark{color:var(--good)} .gate.fail .mark{color:var(--muted)}
+.gate .g-detail{color:var(--muted);font-size:12px;margin-left:auto;font-variant-numeric:tabular-nums}
+.gate.manual .mark{color:var(--series-3)}
 .note{background:var(--champ-bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13px;
   color:var(--text-secondary);margin-bottom:22px}
 .foot{color:var(--muted);font-size:12px;margin-top:24px}
@@ -189,7 +194,32 @@ def activity_table(history):
     return "".join(out)
 
 
-def build_model_page(spec, book, hold_book):
+def graduation_card(spec, book, champ_stats):
+    sharpe, mdd = _stats(book)
+    stats = {"days": len(book["history"]), "sharpe": sharpe, "mdd": mdd}
+    result = graduation.evaluate(stats, champ_stats, spec.name == models.CHAMPION)
+    rows = []
+    for label, passed, detail in result["gates"]:
+        cls = "pass" if passed else "fail"
+        mark = "✓" if passed else "○"
+        rows.append(f'<div class="gate {cls}"><span class="mark">{mark}</span>'
+                    f'<span>{label}</span><span class="g-detail">{detail}</span></div>')
+    for label in result["manual"]:
+        rows.append(f'<div class="gate manual"><span class="mark">◐</span>'
+                    f'<span>{label}</span><span class="g-detail">manual review</span></div>')
+    if result["is_champion"]:
+        verdict = "Incumbent champion — the bar every challenger must clear."
+    elif result["eligible_pending_review"]:
+        verdict = "Auto-gates cleared — pending manual regime + walk-forward review."
+    else:
+        verdict = "Not yet eligible. Gates 1–3 are automatic; 4–5 are manual once 1–3 pass."
+    return ('<div class="card"><h2>Graduation progress</h2>'
+            f'<p>The pre-registered bar to be considered for real money '
+            f'(<a href="https://github.com/jeanlag1/TradingBot/blob/main/docs/graduation.md">docs/graduation.md</a>). '
+            f'{verdict}</p>' + "".join(rows) + '</div>')
+
+
+def build_model_page(spec, book, hold_book, champ_stats):
     curve = paper.equity_curve(book)
     eq = book["history"][-1]["equity"]
     ret = eq / book["start_equity"] - 1
@@ -218,6 +248,7 @@ def build_model_page(spec, book, hold_book):
         '<div class="card"><h2>Equity vs benchmark</h2>'
         '<p>Growth of $1 since start, indexed to 1.00x (aqua = buy&amp;hold benchmark).</p>'
         + multi_line(series) + '</div>'
+        + graduation_card(spec, book, champ_stats) +
         '<div class="card"><h2>Daily decisions — last '
         f'{min(ACTIVITY_DAYS, len(book["history"]))} days</h2>'
         '<p>What the model did each day and why. Signal is its conviction per asset '
@@ -254,9 +285,12 @@ def build():
 
     build_home(rows, books, latest)
     hold = books.get("hold_basket")
+    champ = books[models.CHAMPION]
+    cs, cm = _stats(champ)
+    champ_stats = {"days": len(champ["history"]), "sharpe": cs, "mdd": cm}
     for spec in models.ROSTER:
         if spec.name in books:
-            build_model_page(spec, books[spec.name], hold)
+            build_model_page(spec, books[spec.name], hold, champ_stats)
     print(f"Wrote {PUB/'index.html'} + {len(rows)} model pages")
 
 
