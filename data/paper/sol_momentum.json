@@ -843,6 +843,32 @@
           "reason": "no uptrend (signal 0%) \u2192 in cash"
         }
       ]
+    },
+    {
+      "date": "2026-08-18",
+      "equity": 2500.0,
+      "cash": 2500.0,
+      "invested": 0.0,
+      "weights": {
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "SOL-USD": 75.64
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75.64,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     }
   ]
 }
