@@ -7,9 +7,9 @@
     "SOL-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 2500.0,
+  "cash": -16.25,
   "units": {
-    "SOL-USD": 0.0
+    "SOL-USD": 29.311759878063075
   },
   "history": [
     {
@@ -893,6 +893,32 @@
           "price": 76.73,
           "held_usd": 0.0,
           "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "equity": 2483.75,
+      "cash": -16.25,
+      "invested": 2500.0,
+      "weights": {
+        "SOL-USD": 1.0
+      },
+      "prices": {
+        "SOL-USD": 85.29
+      },
+      "trades": 1,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 1.0,
+          "target_w": 1.0,
+          "action": "buy",
+          "traded_usd": 2500.0,
+          "price": 85.29,
+          "held_usd": 2500.0,
+          "reason": "signal +100% \u2192 bought $2,500"
         }
       ]
     }
