@@ -3615,6 +3615,56 @@
           "reason": "signal +44% \u2192 holding long $474 (within band)"
         }
       ]
+    },
+    {
+      "date": "2026-09-27",
+      "equity": 2534.697845030858,
+      "cash": 965.6953936884729,
+      "invested": 1569.002451342385,
+      "weights": {
+        "BTC-USD": 0.2370254033944706,
+        "ETH-USD": 0.22079846293460903,
+        "SOL-USD": 0.15215854559572486
+      },
+      "prices": {
+        "BTC-USD": 84370.01,
+        "ETH-USD": 2694.38,
+        "SOL-USD": 120.55
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.7110762101834118,
+          "target_w": 0.2370254033944706,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 84370.01,
+          "held_usd": 570.5910532545829,
+          "reason": "signal +71% \u2192 holding long $571 (within band)"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": 0.6623953888038271,
+          "target_w": 0.22079846293460903,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 2694.38,
+          "held_usd": 524.6564848013553,
+          "reason": "signal +66% \u2192 holding long $525 (within band)"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": 0.4564756367871746,
+          "target_w": 0.15215854559572486,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 120.55,
+          "held_usd": 473.7549132864468,
+          "reason": "signal +46% \u2192 holding long $474 (within band)"
+        }
+      ]
     }
   ]
 }
