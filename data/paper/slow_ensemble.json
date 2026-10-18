@@ -9,11 +9,11 @@
     "SOL-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 1133.7458289317624,
+  "cash": 558.2869855010244,
   "units": {
-    "BTC-USD": 0.007647282861543961,
-    "ETH-USD": 0.2201283359136766,
-    "SOL-USD": 4.079273071563412
+    "BTC-USD": 0.010162158307706021,
+    "ETH-USD": 0.3090941379662685,
+    "SOL-USD": 5.530790090824754
   },
   "history": [
     {
@@ -4663,6 +4663,56 @@
           "price": 104.59,
           "held_usd": 426.65117055481727,
           "reason": "signal +49% \u2192 holding long $427 (within band)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-18",
+      "equity": 2711.9385791638615,
+      "cash": 558.2869855010244,
+      "invested": 2153.651593662837,
+      "weights": {
+        "BTC-USD": 0.30604478274589053,
+        "ETH-USD": 0.2752163815156695,
+        "SOL-USD": 0.21178937735231707
+      },
+      "prices": {
+        "BTC-USD": 81784.99,
+        "ETH-USD": 2418.01,
+        "SOL-USD": 103.99
+      },
+      "trades": 3,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.9181343482376716,
+          "target_w": 0.30604478274589053,
+          "action": "buy",
+          "traded_usd": 205.67906321560963,
+          "price": 81784.99,
+          "held_usd": 831.1120155741539,
+          "reason": "signal +92% \u2192 bought $206"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": 0.8256491445470087,
+          "target_w": 0.2752163815156695,
+          "action": "buy",
+          "traded_usd": 215.12019902118777,
+          "price": 2418.01,
+          "held_usd": 747.392716543817,
+          "reason": "signal +83% \u2192 bought $215"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": 0.6353681320569512,
+          "target_w": 0.21178937735231707,
+          "action": "buy",
+          "traded_usd": 150.9432548329869,
+          "price": 103.99,
+          "held_usd": 575.146861544866,
+          "reason": "signal +64% \u2192 bought $151"
         }
       ]
     }
