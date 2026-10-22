@@ -10695,6 +10695,116 @@
           "reason": "momentum +54% \u2192 held (still a top-3 trend)"
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "equity": 2637.3823176706173,
+      "cash": -152.82533442524175,
+      "invested": 2790.207652095859,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.3333333333333333,
+        "XRP-USD": 0.0,
+        "DOGE-USD": 0.0,
+        "LINK-USD": 0.3333333333333333,
+        "ADA-USD": 0.0,
+        "AVAX-USD": 0.3333333333333333
+      },
+      "prices": {
+        "BTC-USD": 82705.08,
+        "ETH-USD": 2439.56,
+        "SOL-USD": 105.23,
+        "XRP-USD": 1.3441,
+        "DOGE-USD": 0.07998,
+        "LINK-USD": 12.214,
+        "ADA-USD": 0.21955,
+        "AVAX-USD": 9.372
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.2905866924497671,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 82705.08,
+          "held_usd": 0.0,
+          "reason": "momentum +29% but not top 3 \u2192 not held"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": 0.3117536039402722,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 2439.56,
+          "held_usd": 0.0,
+          "reason": "momentum +31% but not top 3 \u2192 not held"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": 0.42395128552097416,
+          "target_w": 0.3333333333333333,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 105.23,
+          "held_usd": 901.3006187444275,
+          "reason": "momentum +42% \u2192 held (still a top-3 trend)"
+        },
+        {
+          "asset": "XRP-USD",
+          "signal": 0.23198900091659036,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 1.3441,
+          "held_usd": 0.0,
+          "reason": "momentum +23% but not top 3 \u2192 not held"
+        },
+        {
+          "asset": "DOGE-USD",
+          "signal": 0.15029483676111033,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 0.07998,
+          "held_usd": 0.0,
+          "reason": "momentum +15% but not top 3 \u2192 not held"
+        },
+        {
+          "asset": "LINK-USD",
+          "signal": 0.46556275497960176,
+          "target_w": 0.3333333333333333,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 12.214,
+          "held_usd": 959.3788837227875,
+          "reason": "momentum +47% \u2192 held (still a top-3 trend)"
+        },
+        {
+          "asset": "ADA-USD",
+          "signal": 0.34035409035409026,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 0.21955,
+          "held_usd": 0.0,
+          "reason": "momentum +34% but not top 3 \u2192 not held"
+        },
+        {
+          "asset": "AVAX-USD",
+          "signal": 0.4876190476190476,
+          "target_w": 0.3333333333333333,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 9.372,
+          "held_usd": 929.5281496286442,
+          "reason": "momentum +49% \u2192 held (still a top-3 trend)"
+        }
+      ]
     }
   ]
 }
