@@ -7,9 +7,9 @@
     "BTC-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 1299.5801703487332,
+  "cash": 645.7167643450439,
   "units": {
-    "BTC-USD": 0.016320256437835745
+    "BTC-USD": 0.024474760812083694
   },
   "history": [
     {
@@ -2661,6 +2661,32 @@
           "price": 79883.61,
           "held_usd": 1303.7210003800599,
           "reason": "signal +50% \u2192 trimmed ($637)"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "equity": 2595.5350518333016,
+      "cash": 645.7167643450439,
+      "invested": 1949.8182874882575,
+      "weights": {
+        "BTC-USD": 0.75
+      },
+      "prices": {
+        "BTC-USD": 79666.49
+      },
+      "trades": 1,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.75,
+          "target_w": 0.75,
+          "action": "buy",
+          "traded_usd": 649.6407411859805,
+          "price": 79666.49,
+          "held_usd": 1949.8182874882575,
+          "reason": "signal +75% \u2192 bought $650"
         }
       ]
     }
