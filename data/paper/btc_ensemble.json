@@ -2689,6 +2689,32 @@
           "reason": "signal +75% \u2192 bought $650"
         }
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "equity": 2624.119124985734,
+      "cash": 645.7167643450439,
+      "invested": 1978.40236064069,
+      "weights": {
+        "BTC-USD": 0.75
+      },
+      "prices": {
+        "BTC-USD": 80834.39
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.75,
+          "target_w": 0.75,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 80834.39,
+          "held_usd": 1978.40236064069,
+          "reason": "signal +75% \u2192 holding long $1,978 (within band)"
+        }
+      ]
     }
   ]
 }
