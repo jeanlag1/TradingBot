@@ -2767,6 +2767,32 @@
           "reason": "signal +100% \u2192 holding long $2,880 (within band)"
         }
       ]
+    },
+    {
+      "date": "2026-10-31",
+      "equity": 2793.2821843123456,
+      "cash": -16.25,
+      "invested": 2809.5321843123456,
+      "weights": {
+        "SOL-USD": 1.0
+      },
+      "prices": {
+        "SOL-USD": 95.85
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 1.0,
+          "target_w": 1.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 95.85,
+          "held_usd": 2809.5321843123456,
+          "reason": "signal +100% \u2192 holding long $2,810 (within band)"
+        }
+      ]
     }
   ]
 }
