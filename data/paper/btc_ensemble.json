@@ -2949,6 +2949,32 @@
           "reason": "signal +41% \u2192 trimmed ($681)"
         }
       ]
+    },
+    {
+      "date": "2026-11-07",
+      "equity": 2478.4541796118033,
+      "cash": 1447.655721433638,
+      "invested": 1030.7984581781652,
+      "weights": {
+        "BTC-USD": 0.4191682396970834
+      },
+      "prices": {
+        "BTC-USD": 75921.08
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.4191682396970834,
+          "target_w": 0.4191682396970834,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 75921.08,
+          "held_usd": 1030.7984581781652,
+          "reason": "signal +42% \u2192 holding long $1,031 (within band)"
+        }
+      ]
     }
   ]
 }
