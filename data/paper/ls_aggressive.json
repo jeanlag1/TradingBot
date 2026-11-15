@@ -9,11 +9,11 @@
     "SOL-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 2215.462118955728,
+  "cash": 3789.1204609255706,
   "units": {
-    "BTC-USD": 0.0,
-    "ETH-USD": 2.7755575615628914e-17,
-    "SOL-USD": 0.0
+    "BTC-USD": -0.005999590712958769,
+    "ETH-USD": -0.32528975763250434,
+    "SOL-USD": -8.65146201255448
   },
   "history": [
     {
@@ -6063,6 +6063,56 @@
           "price": 75.84,
           "held_usd": 0.0,
           "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "equity": 2204.6879780723257,
+      "cash": 3789.1204609255706,
+      "invested": -1584.4324828532447,
+      "weights": {
+        "BTC-USD": -0.17477782233206574,
+        "ETH-USD": -0.2639157414389559,
+        "SOL-USD": -0.27647663448995197
+      },
+      "prices": {
+        "BTC-USD": 64540.01,
+        "ETH-USD": 1797.46,
+        "SOL-USD": 70.8
+      },
+      "trades": 3,
+      "funding": 0.47532974485597335,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": -0.5243334669961972,
+          "target_w": -0.17477782233206574,
+          "action": "short",
+          "traded_usd": -387.2136446102661,
+          "price": 64540.01,
+          "held_usd": -387.2136446102661,
+          "reason": "downtrend, signal -52% \u2192 shorted $387"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": -0.7917472243168677,
+          "target_w": -0.2639157414389559,
+          "action": "short",
+          "traded_usd": -584.6953277541213,
+          "price": 1797.46,
+          "held_usd": -584.6953277541213,
+          "reason": "downtrend, signal -79% \u2192 shorted $585"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": -0.829429903469856,
+          "target_w": -0.27647663448995197,
+          "action": "short",
+          "traded_usd": -612.5235104888573,
+          "price": 70.8,
+          "held_usd": -612.5235104888573,
+          "reason": "downtrend, signal -83% \u2192 shorted $613"
         }
       ]
     }

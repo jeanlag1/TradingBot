@@ -9,11 +9,11 @@
     "SOL-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 2321.1931358833936,
+  "cash": 3420.366354374349,
   "units": {
-    "BTC-USD": 0.0,
-    "ETH-USD": 0.0,
-    "SOL-USD": 0.0
+    "BTC-USD": -0.004190610666694332,
+    "ETH-USD": -0.2272092869863329,
+    "SOL-USD": -6.042897045293959
   },
   "history": [
     {
@@ -6063,6 +6063,56 @@
           "price": 75.84,
           "held_usd": 0.0,
           "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "equity": 2313.667584246524,
+      "cash": 3420.366354374349,
+      "invested": -1106.6987701278251,
+      "weights": {
+        "BTC-USD": -0.11651854822137715,
+        "ETH-USD": -0.1759438276259706,
+        "SOL-USD": -0.18431775632663464
+      },
+      "prices": {
+        "BTC-USD": 64540.01,
+        "ETH-USD": 1797.46,
+        "SOL-USD": 70.8
+      },
+      "trades": 3,
+      "funding": 0.3320096310383475,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": -0.34955564466413147,
+          "target_w": -0.11651854822137715,
+          "action": "short",
+          "traded_usd": -270.46205433455884,
+          "price": 64540.01,
+          "held_usd": -270.46205433455884,
+          "reason": "downtrend, signal -35% \u2192 shorted $270"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": -0.5278314828779118,
+          "target_w": -0.1759438276259706,
+          "action": "short",
+          "traded_usd": -408.39960498645394,
+          "price": 1797.46,
+          "held_usd": -408.39960498645394,
+          "reason": "downtrend, signal -53% \u2192 shorted $408"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": -0.5529532689799039,
+          "target_w": -0.18431775632663464,
+          "action": "short",
+          "traded_usd": -427.83711080681223,
+          "price": 70.8,
+          "held_usd": -427.8371108068123,
+          "reason": "downtrend, signal -55% \u2192 shorted $428"
         }
       ]
     }
