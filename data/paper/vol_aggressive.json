@@ -9,9 +9,9 @@
     "SOL-USD"
   ],
   "start_equity": 2500.0,
-  "cash": 2233.332346037533,
+  "cash": 2434.9112489438426,
   "units": {
-    "BTC-USD": 0.003153670619828919,
+    "BTC-USD": 0.0,
     "ETH-USD": 0.0,
     "SOL-USD": 0.0
   },
@@ -6113,6 +6113,56 @@
           "price": 70.8,
           "held_usd": 0.0,
           "reason": "signal +0% \u2192 closed position ($327)"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "equity": 2434.9112489438426,
+      "cash": 2434.9112489438426,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 64337.01,
+        "ETH-USD": 1806.81,
+        "SOL-USD": 70.83
+      },
+      "trades": 1,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "sell",
+          "traded_usd": -202.89773820463935,
+          "price": 64337.01,
+          "held_usd": 0.0,
+          "reason": "signal +0% \u2192 closed position ($203)"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 1806.81,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 70.83,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
         }
       ]
     }
