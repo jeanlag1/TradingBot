@@ -13995,6 +13995,116 @@
           "reason": "momentum -8% (no uptrend) \u2192 not held"
         }
       ]
+    },
+    {
+      "date": "2026-11-21",
+      "equity": 1856.5885117460962,
+      "cash": 1856.5885117460962,
+      "invested": -8.978418009064625e-14,
+      "weights": {
+        "BTC-USD": 0.0,
+        "ETH-USD": 0.0,
+        "SOL-USD": 0.0,
+        "XRP-USD": 0.0,
+        "DOGE-USD": 0.0,
+        "LINK-USD": 0.0,
+        "ADA-USD": 0.0,
+        "AVAX-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 57784.6,
+        "ETH-USD": 1632.75,
+        "SOL-USD": 67.97,
+        "XRP-USD": 0.8967,
+        "DOGE-USD": 0.05349,
+        "LINK-USD": 8.374,
+        "ADA-USD": 0.14003,
+        "AVAX-USD": 6.318
+      },
+      "trades": 0,
+      "funding": 2.6935254027193875e-17,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": -0.25659236098174487,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 57784.6,
+          "held_usd": 0.0,
+          "reason": "momentum -26% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "ETH-USD",
+          "signal": -0.3371938669881748,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 1632.75,
+          "held_usd": 0.0,
+          "reason": "momentum -34% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "SOL-USD",
+          "signal": -0.2877501833804884,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 67.97,
+          "held_usd": 0.0,
+          "reason": "momentum -29% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "XRP-USD",
+          "signal": -0.4102597829661295,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 0.8967,
+          "held_usd": 0.0,
+          "reason": "momentum -41% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "DOGE-USD",
+          "signal": -0.4273632373407559,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 0.05349,
+          "held_usd": 0.0,
+          "reason": "momentum -43% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "LINK-USD",
+          "signal": -0.27428719993066986,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 8.374,
+          "held_usd": 0.0,
+          "reason": "momentum -27% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "ADA-USD",
+          "signal": -0.3829918484247633,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 0.14003,
+          "held_usd": 0.0,
+          "reason": "momentum -38% (no uptrend) \u2192 not held"
+        },
+        {
+          "asset": "AVAX-USD",
+          "signal": -0.1696674990143252,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 6.318,
+          "held_usd": -8.978418009064625e-14,
+          "reason": "momentum -17% (no uptrend) \u2192 not held"
+        }
+      ]
     }
   ]
 }
