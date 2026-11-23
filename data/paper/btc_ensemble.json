@@ -3365,6 +3365,32 @@
           "reason": "no uptrend (signal 0%) \u2192 in cash"
         }
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "equity": 2316.96567144668,
+      "cash": 2316.96567144668,
+      "invested": 0.0,
+      "weights": {
+        "BTC-USD": 0.0
+      },
+      "prices": {
+        "BTC-USD": 61401.0
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "BTC-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 61401.0,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     }
   ]
 }
