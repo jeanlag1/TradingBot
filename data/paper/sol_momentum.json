@@ -3443,6 +3443,32 @@
           "reason": "no uptrend (signal 0%) \u2192 in cash"
         }
       ]
+    },
+    {
+      "date": "2026-11-26",
+      "equity": 2045.533327470981,
+      "cash": 2045.533327470981,
+      "invested": 0.0,
+      "weights": {
+        "SOL-USD": 0.0
+      },
+      "prices": {
+        "SOL-USD": 70.89
+      },
+      "trades": 0,
+      "funding": 0.0,
+      "legs": [
+        {
+          "asset": "SOL-USD",
+          "signal": 0.0,
+          "target_w": 0.0,
+          "action": "hold",
+          "traded_usd": 0.0,
+          "price": 70.89,
+          "held_usd": 0.0,
+          "reason": "no uptrend (signal 0%) \u2192 in cash"
+        }
+      ]
     }
   ]
 }
